@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
-    <title>PettyMoneyKing</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="ROBOTS" content="NOODP"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <%# <%= favicon_link_tag (ENV.fetch("ENVIRONMENT").eql? 'staging') ? 'mini_logo_blue.png' : ( (ENV.fetch("ENVIRONMENT").eql? 'production') ? 'mini_logo.png' : 'mini_logo_green.png') %> 
+    <%= stylesheet_link_tag :application, media: "all" %>
+    <title><%= '佐登妮絲' %>
+      | K3整合系统</title>
   </head>
-
-  <body>
-    <%= yield %>
+  <body class="nav-sm">
+    <div class="container body">
+      <div class="main_container">
+        <%= render "common/side" %>
+        <%= render "common/nav" %>
+        <div class="right_col" role="main">
+          <div>
+            <div class="x_content">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+        <%= render "javascript" %>
+        <%= render "common/footer" %>
+      </div>
+    </div>
   </body>
 </html>

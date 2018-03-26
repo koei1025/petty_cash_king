@@ -1,0 +1,51 @@
+<!-- top navigation -->
+<div class="top_nav">
+  <div class="nav_menu">
+    <nav>
+      <div class="nav toggle">
+        <a id="menu_toggle">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="">
+          <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+
+            姓名
+            <span class=" fa fa-fw fa-angle-down"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-usermenu pull-right">
+            <li>
+              <a href="#" target="_blank">
+                <i class="fa fa-fw fa-question-circle"></i>
+                用户文档</a>
+            </li>
+            <li>
+              <%= link_to('#') do %>
+              <i class="fa fa-fw fa-lock"></i>
+              更改密码
+              <% end %>
+            </li>
+            <li>
+              <%= link_to('#', method: :delete, id: "sign_out") do %>
+              <i class="fa fa-fw fa-sign-out"></i>
+              注销
+              <% end %>
+            </li>
+          </ul>
+        </li>
+        <li role="presentation" class="dropdown">
+          <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-eye"></i>
+            <span class="badge bg-green"></span>
+          </a>
+          <ul id="menu2" class="dropdown-menu list-unstyled msg_list" role="menu">
+ 
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- /top navigation -->
