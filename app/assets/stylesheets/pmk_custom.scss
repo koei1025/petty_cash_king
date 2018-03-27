@@ -1,0 +1,57 @@
+.pmk-label {
+    @extend .control-label;
+    @extend .col-md-3;
+    @extend .col-sm-3;
+    @extend .col-xs-12;
+}
+.pmk-labels {
+    padding-top: 8px;
+    @extend .col-md-6;
+    @extend .col-sm-6;
+    @extend .col-xs-12;
+}
+.pmk-input {
+    @extend .col-md-6;
+    @extend .col-sm-6;
+    @extend .col-xs-12;
+}
+.md2 {
+    @extend .col-md-2;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+}
+.md1 {
+    @extend .col-md-1;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+}
+.md3 {
+    @extend .col-md-3;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+}
+.md4 {
+    @extend .col-md-4;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+}
+.md5 {
+    @extend .col-md-5;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+}
+.md6 {
+    @extend .col-md-6;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+}
+.md8 {
+    @extend .col-md-8;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+}
+.md12 {
+    @extend .col-md-12;
+    @extend .col-sm-12;
+    @extend .col-xs-12;
+}

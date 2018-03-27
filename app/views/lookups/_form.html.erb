@@ -1,0 +1,41 @@
+<%= form_for [@lookup_sort, lookup],html: {class: "form-horizontal form-label-left" }  do |f| %>
+<div class="x_panel">
+  <div class="field form-group">
+    <%= f.label "*代碼", class: "pmk-label" %>
+    <% if lookup.code.nil? %>
+    <%= f.text_field :code, {class: "pmk-input", autofocus: true, required: true} %>
+  <% else %>
+    <%= f.text_field :code, {class: "pmk-input", disabled: true} %>
+    <% end %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "*名稱", class: "pmk-label" %>
+    <%= f.text_field :name, {class: "pmk-input", required:"required", autofocus: (true unless lookup.code.nil?) } %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "描述", class: "pmk-label" %>
+    <%= f.text_field :description, {class: "pmk-input"} %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "標籤", class: "pmk-label" %>
+    <%= f.text_field :tag, {class: "pmk-input", placeholder: "tag"} %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "開始日期", class: "pmk-label" %>
+    <%= f.date_field :start_on, {class: "pmk-input", placeholder: "例：2017/04/14"} %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "結束日期", class: "pmk-label" %>
+    <%= f.date_field :end_on, {class: "pmk-input", placeholder: "例：2017/04/24"} %>
+  </div>
+
+  <div class="actions" style="text-align:center">
+    <%= f.submit "送出", class: "btn btn-success", data: {disable_with: "...🚀"} %>
+  </div>
+</div>
+<% end %>

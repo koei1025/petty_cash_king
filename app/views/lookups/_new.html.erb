@@ -1,0 +1,8 @@
+<%= content_tag :div, class: "modal fade", id: dom_id(@lookup, :modal) do %>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <h1 style="text-align:center">新增代碼</h1>
+    <%= render 'form', lookup: @lookup, lookup_sort: @lookup_sort %>
+  </div>
+</div>
+<% end %>

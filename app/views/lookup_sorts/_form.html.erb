@@ -1,0 +1,31 @@
+<%= form_for(lookup_sort, html: {class: "form-horizontal form-label-left"}) do |f| %>
+<div class="x_panel">
+  <br/>
+  <div class="field form-group">
+    <%= f.label "*代碼類型", class: "pmk-label" %>
+    <% if lookup_sort.sort.nil?  %>
+      <%= f.text_field :sort, {class: "pmk-input", autofocus: true, required: true} %>
+    <% else %>
+      <%= f.text_field :sort, {class: "pmk-input", disabled: true} %>
+    <% end %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "*名稱", class: "pmk-label" %>
+    <%= f.text_field :name,{class: "pmk-input",required:"required",  autofocus: (true unless lookup_sort.sort.nil?) } %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "描述", class: "pmk-label" %>
+    <%= f.text_field :description,{class: "pmk-input"} %>
+  </div>
+
+  <div class="actions" style="text-align:center">
+    <% if lookup_sort.sort %>
+      <%= f.submit "更改", class: "btn btn-success", data: {disable_with: "...🚀"} %>
+    <% else %>
+      <%= f.submit "新增", class: "btn btn-success", data: {disable_with: "...🚀"} %>
+    <% end %>  
+  </div>
+</div>
+<% end %>

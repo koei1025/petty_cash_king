@@ -1,0 +1,41 @@
+<h1><%= pmktitle "代碼類型與系統設定 #{go_back('_index')}" %></h1>
+<%= render 'form', lookup_sort: @lookup_sort %>
+<div class="x_panel">
+  <h2>代碼內容</h2>
+  <%= link_to('新增', new_lookup_sort_lookup_path(@lookup_sort), {remote: true, class: "btn btn-primary", style: "float: right"}) %>
+  <table id="datatable-buttons" class="table table-striped table-bordered">
+    <col width=14%/>
+    <col width=14%/>
+    <col width=14%/>
+    <col width=14%/>
+    <col width=14%/>
+    <col width=14%/>
+    <col width=14%/>
+    <thead>
+      <tr>
+        <th>代碼</th>
+        <th>名稱</th>
+        <th>描述</th>
+        <th>標籤</th>
+        <th>開始日期</th>
+        <th>結束日期</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% for lookup in @lookup_sort.lookups %>
+      <tr>
+        <td><%= lookup.code %></td>
+        <td><%= lookup.name %></td>
+        <td><%= lookup.description %></td>
+        <td><%= lookup.tag %></td>
+        <td><%= lookup.start_on %></td>
+        <td><%= lookup.end_on %></td>
+        <td><%= link_to("", edit_lookup_sort_lookup_path(@lookup_sort, lookup), {remote: true, class: "fa fa-edit"}) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -2570,12 +2570,12 @@ if (typeof NProgress != 'undefined') {
           if ($("#datatable-buttons").length) {
           $("#datatable-buttons").DataTable({
             "language": {
-              "emptyTable": "目前尚无数据",
-              "lengthMenu": "每页显示 _MENU_ 个纪录",
-              "zeroRecords": "无数据符合条件",
-              "info": "第 _PAGE_ 页，共 _PAGES_ 页",
-              "infoEmpty": "无数据",
-              "infoFiltered": "(共 _MAX_ 笔数据)"
+              "emptyTable": "目前尚無資料",
+              "lengthMenu": "每頁顯示 _MENU_ 筆紀錄",
+              "zeroRecords": "無資料符合條件",
+              "info": "第 _PAGE_ 頁，共 _PAGES_ 頁",
+              "infoEmpty": "查無資料",
+              "infoFiltered": "(共 _MAX_ 筆資料)"
             },
             dom: "Bfrtip",
             buttons: [
@@ -2585,14 +2585,6 @@ if (typeof NProgress != 'undefined') {
             },
             {
               extend: "csv",
-              className: "btn-sm"
-            },
-            {
-              extend: "excel",
-              className: "btn-sm"
-            },
-            {
-              extend: "pdfHtml5",
               className: "btn-sm"
             },
             {
@@ -2605,12 +2597,12 @@ if (typeof NProgress != 'undefined') {
           if ($("#datatable-buttons1").length) {
           $("#datatable-buttons1").DataTable({
             "language": {
-              "emptyTable": "目前尚无数据",
-              "lengthMenu": "每页显示 _MENU_ 个纪录",
-              "zeroRecords": "无数据符合条件",
-              "info": "第 _PAGE_ 页，共 _PAGES_ 页",
-              "infoEmpty": "无数据",
-              "infoFiltered": "(共 _MAX_ 笔数据)"
+              "emptyTable": "目前尚無資料",
+              "lengthMenu": "每頁顯示 _MENU_ 筆紀錄",
+              "zeroRecords": "無資料符合條件",
+              "info": "第 _PAGE_ 頁，共 _PAGES_ 頁",
+              "infoEmpty": "查無資料",
+              "infoFiltered": "(共 _MAX_ 筆資料)"
             },
             dom: "Bfrtip",
             bSort: false,
@@ -2621,14 +2613,6 @@ if (typeof NProgress != 'undefined') {
             },
             {
               extend: "csv",
-              className: "btn-sm"
-            },
-            {
-              extend: "excel",
-              className: "btn-sm"
-            },
-            {
-              extend: "pdfHtml5",
               className: "btn-sm"
             },
             {
@@ -2651,12 +2635,12 @@ if (typeof NProgress != 'undefined') {
 
         $('#datatable').dataTable({
           "language": {
-            "emptyTable": "目前尚无数据",
-            "lengthMenu": "每页显示 _MENU_ 个纪录",
-            "zeroRecords": "无数据符合条件",
-            "info": "第 _PAGE_ 页，共 _PAGES_ 页",
-            "infoEmpty": "无数据",
-            "infoFiltered": "(共 _MAX_ 笔数据)"
+            "emptyTable": "目前尚無資料",
+            "lengthMenu": "每頁顯示 _MENU_ 筆紀錄",
+            "zeroRecords": "無資料符合條件",
+            "info": "第 _PAGE_ 頁，共 _PAGES_ 頁",
+            "infoEmpty": "查無資料",
+            "infoFiltered": "(共 _MAX_ 筆資料)"
           },
           bSort: false
         });
