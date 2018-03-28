@@ -2,22 +2,22 @@
 <div class="x_panel">
   <br/>
   <div class="field form-group">
-    <%= f.label "*代碼類型", class: "pmk-label" %>
+    <%= f.label "*代碼類型", class: "control-label col-md-3 col-sm-3 col-xs12" %>
     <% if lookup_sort.sort.nil?  %>
-      <%= f.text_field :sort, {class: "pmk-input", autofocus: true, required: true} %>
+      <%= f.text_field :sort, {class: "col-md-6 col-sm-6 col-xs-12", autofocus: true, required: true} %>
     <% else %>
-      <%= f.text_field :sort, {class: "pmk-input", disabled: true} %>
+      <%= f.text_field :sort, {class: "col-md-6 col-sm-6 col-xs-12", disabled: true} %>
     <% end %>
   </div>
 
   <div class="field form-group">
-    <%= f.label "*名稱", class: "pmk-label" %>
-    <%= f.text_field :name,{class: "pmk-input",required:"required",  autofocus: (true unless lookup_sort.sort.nil?) } %>
+    <%= f.label "*名稱", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <%= f.text_field :name,{class: "col-md-6 col-sm-6 col-xs-12",required:"required",  autofocus: (true unless lookup_sort.sort.nil?) } %>
   </div>
 
   <div class="field form-group">
-    <%= f.label "描述", class: "pmk-label" %>
-    <%= f.text_field :description,{class: "pmk-input"} %>
+    <%= f.label "描述", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <%= f.text_field :description,{class: "col-md-6 col-sm-6 col-xs-12"} %>
   </div>
 
   <div class="actions" style="text-align:center">

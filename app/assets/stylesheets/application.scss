@@ -4,12 +4,11 @@
 *= require jquery-gentleSelect
 *= require select2
 *= require select2-bootstrap
+*= require_tree .
  */
 @charset "utf-8";
 
 @import "normalize-rails";
 @import "refills/flashes";
-
 @import "gentelella";
 @import "gentelella-custom";
-@import "pmk_custom";

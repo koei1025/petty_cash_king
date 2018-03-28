@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327035308) do
+ActiveRecord::Schema.define(version: 20180328053234) do
 
-  create_table "lookup_sorts", force: :cascade do |t|
+  create_table "job_defines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string "worker_type"
+    t.string "job_class"
+    t.string "report_code"
+    t.string "name"
+    t.boolean "system_only"
+    t.boolean "mutual_exclusion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_parameters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.integer "job_define_id"
+    t.integer "seq"
+    t.string "code"
+    t.string "name"
+    t.string "parameter_type"
+    t.string "default_value"
+    t.integer "lookup_sort_id"
+    t.string "hardcode"
+    t.boolean "show_flag"
+    t.string "lookup_relation"
+    t.string "lookup_model"
+    t.string "lookup_model_key"
+    t.string "lookup_model_value"
+    t.string "relation_filter"
+    t.boolean "required"
+    t.boolean "allow_all"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lookup_sorts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "sort"
     t.string "name"
     t.string "description"
@@ -20,7 +52,7 @@ ActiveRecord::Schema.define(version: 20180327035308) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "lookups", force: :cascade do |t|
+  create_table "lookups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.integer "lookup_sort_id"
     t.string "code"
     t.string "name"

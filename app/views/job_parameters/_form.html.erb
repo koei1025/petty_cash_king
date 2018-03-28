@@ -1,0 +1,115 @@
+<%= form_for [@job_define, job_parameter], html: {class: "form-horizontal form-label-left" }  do |f| %>
+<div class="field form-group">
+  <%= f.label "*序號", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.number_field :seq, required: true, autofocus: true, min: 0 %>
+  </div>
+</div>
+<div class="field form-group">
+  <%= f.label "*代碼", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.text_field :code, {class: "form-control", required: true} %>
+  </div>
+</div>
+<div class="field form-group">
+  <%= f.label "*名稱", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.text_field :name, {class: "form-control", required: true} %>
+  </div>
+</div>
+
+<div class="field form-group">
+  <%= f.label "*資料型態", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.select :parameter_type, %w[Integer String Date Datetime Lookup Hardcode Model], {prompt:"請選擇..."}, {class: "form-control", required: true, id: "job_parameter_type"} %>
+  </div>
+</div>
+<div class="field form-group" , id='job_parameter_default_values'>
+  <%= f.label "預設值", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.text_field :default_value, {class: "form-control"} %>
+  </div>
+</div>
+
+<div class="field form-group" , id='job_parameter_lookup_sort_ids'>
+  <%= f.label "代碼類型", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.select :lookup_sort_id, options_from_collection_for_select(@lookup_sort, :id, :name, job_parameter.lookup_sort_id), {prompt:"請選擇..."}, {class: "form-control"} %>
+  </div>
+</div>
+<div id='job_parameter_lookup_models'>
+  <div class="field form-group">
+    <%= f.label "*Model", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.select :lookup_model, @lookup_model, {prompt:"請選擇..."}, {class: "form-control"} %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label "*Model Key", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_field :lookup_model_key, class: "form-control" %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label "*Model Value", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_field :lookup_model_value, class: "form-control" %>
+    </div>
+  </div>
+</div>
+<div id='job_parameter_lookup_relations'>
+  <div class="field form-group" >
+    <%= f.label "關連參數名稱", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.select :lookup_relation, options_from_collection_for_select(@lookup_relation, :seq, :name, job_parameter.lookup_relation), {prompt:"請選擇..."}, {class: "form-control", include_blank: true} %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label "關連欄位", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_field :relation_filter, class: "form-control"  %>
+    </div>
+  </div>
+</div>
+
+<div class="field form-group" , id='job_parameter_hardcodes'>
+  <%= f.label "Hardcode", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.text_field :hardcode, {class: "form-control", placeholder: "以逗點分開"} %>
+  </div>
+</div>
+
+<div class="field form-group">
+  <%= f.label "是否顯示", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.radio_button :show_flag, true %>
+    <%= label :show_flag_1, '是' %>
+    <%= f.radio_button :show_flag, false %>
+    <%= label :show_flag_0, '否' %>
+  </div>
+</div>
+
+<div class="field form-group">
+  <%= f.label "是否必要", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.radio_button :required, true %>
+    <%= label :required_1, '是' %>
+    <%= f.radio_button :required, false %>
+    <%= label :required_0, '否' %>
+  </div>
+</div>
+
+<div class="field form-group">
+  <%= f.label "允許全選", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <%= f.radio_button :allow_all, true%>
+    <%= label :allow_all_1, '是' %>
+    <%= f.radio_button :allow_all, false %>
+    <%= label :allow_all_0, '否' %>
+  </div>
+</div>
+
+<div class="actions" style="text-align:center">
+  <%= f.submit "送出", class: "btn btn-success", data: {disable_with: "...🚀"} %>
+</div>
+<% end %>

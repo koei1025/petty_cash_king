@@ -12,7 +12,7 @@ gem 'gentelella-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'mysql2'
+gem 'mysql2', '0.4.6'
 gem 'modernizr-rails'
 gem 'normalize-rails', '~> 3.0.0'
 gem 'puma', '~> 3.7'
@@ -34,7 +34,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'sqlite3'
 end
 
 group :development do

@@ -1,0 +1,8 @@
+<%= content_tag :div, class: "modal fade", id: dom_id(@job_define, :modal) do %>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <h1 style="text-align:center">新增工作定義</h1>
+    <%= render 'form', job_define: @job_define %>
+  </div>
+</div>
+<% end %>

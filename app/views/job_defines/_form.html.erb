@@ -1,0 +1,49 @@
+<%= form_for(job_define, html: {class: "form-horizontal form-label-left"}) do |f| %>
+<div class="x_panel">
+  <br/>
+  <div class="field form-group">
+    <%= f.label "*工作類型", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.select :worker_type, options_for_select([['工作','Worker'],['報表','Report']],job_define.worker_type||'Worker'),{prompt: "請選擇..."}, {class: "form-control", required: true, id: "worker_type", autofocus: true, include_blank: false}%>
+    </div>
+  </div>
+  <div class="field form-group" id="job_class_div">
+    <%= f.label "*類別", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_field :job_class, class: "form-control col-md-7 col-xs-12" %>
+    </div>
+  </div>
+  <div class="field form-group" id="report_code_div">
+    <%= f.label "*報表代碼", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_field :report_code, class: "form-control col-md-7 col-xs-12" %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label "*名稱", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_field :name, {class: "form-control col-md-7 col-xs-12", required:true} %>
+    </div>
+
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "同程式互斥", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.check_box :mutual_exclusion, class: 'checkbox' , style: 'margin: 10px'%>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "系統執行程式", class: "control-label col-md-3 col-sm-3 col-xs12" %>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.check_box :system_only, class: 'checkbox' , style: 'margin: 10px' %>
+    </div>
+  </div>
+
+  <div class="actions" style="text-align:center">
+    <%= f.submit "送出", class: "btn btn-success", data: {disable_with: "...🚀"} %>
+  </div>
+</div>
+<% end %>
+

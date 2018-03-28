@@ -1,0 +1,49 @@
+<h1><%= pmktitle "工作定義設定 #{go_back('_index')}" %></h1>
+<%= render 'form', job_define: @job_define %>
+<div class="x_panel">
+  <h2>工作參數定義</h2>
+  <%= link_to('新增', new_job_define_job_parameter_path(@job_define), {class: "btn btn-primary", style: "float: right"}) %>
+  <table id="datatable-buttons" class="table table-striped table-bordered">
+    <col width=12%/>
+    <col width=12%/>
+    <col width=12%/>
+    <col width=12%/>
+    <col width=8%/>
+    <col width=8%/>
+    <col width=8%/>
+    <col width=8%/>
+    <col width=16%/>
+    <thead>
+      <tr>
+        <th>序號</th>
+        <th>代碼</th>
+        <th>名稱</th>
+        <th>資料型態</th>
+        <th>預設值</th>
+        <th>顯示</th>
+        <th>必要</th>
+        <th>允許全選</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% for job_parameter in @job_define.job_parameters %>
+      <tr>
+        <td><%= job_parameter.seq %></td>
+        <td><%= job_parameter.code %></td>
+        <td><%= job_parameter.name %></td>
+        <td><%= job_parameter.parameter_type %></td>
+        <td><%= job_parameter.default_value %></td>
+        <td><%= job_parameter.show_flag ? '是' : '否' %></td>
+        <td><%= job_parameter.required ? '是' : '否' %></td>
+        <td><%= job_parameter.allow_all ? '是' : '否' %></td>
+        <td>
+          <%= link_to("", edit_job_define_job_parameter_path(@job_define, job_parameter), {class: "fa fa-edit"}) %>
+          <%= link_to("", [@job_define, job_parameter], method: :delete, data: {confirm: "確認刪除?"}, class: "fa fa-trash") %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

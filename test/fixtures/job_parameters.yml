@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_define_id: 1
+  seq: 1
+  code: MyString
+  name: MyString
+  parameter_type: MyString
+  default_value: MyString
+  lookup_sort_id: 1
+  hardcode: MyString
+  show_flag: false
+  lookup_relation: MyString
+  lookup_model: MyString
+  lookup_model_key: MyString
+  lookup_model_value: MyString
+  relation_filter: MyString
+  required: false
+  allow_all: false
+
+two:
+  job_define_id: 1
+  seq: 1
+  code: MyString
+  name: MyString
+  parameter_type: MyString
+  default_value: MyString
+  lookup_sort_id: 1
+  hardcode: MyString
+  show_flag: false
+  lookup_relation: MyString
+  lookup_model: MyString
+  lookup_model_key: MyString
+  lookup_model_value: MyString
+  relation_filter: MyString
+  required: false
+  allow_all: false
