@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328053234) do
+ActiveRecord::Schema.define(version: 20180329013931) do
 
   create_table "job_defines", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "worker_type"
@@ -60,6 +60,29 @@ ActiveRecord::Schema.define(version: 20180328053234) do
     t.string "tag"
     t.date "start_on"
     t.date "end_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sidekiq_job_logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string "jid"
+    t.string "category"
+    t.string "source"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sidekiq_job_monitors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.integer "job_define_id"
+    t.string "jid"
+    t.string "job_args"
+    t.integer "user_id"
+    t.datetime "expected_at"
+    t.datetime "executing_at"
+    t.datetime "complete_at"
+    t.string "status"
+    t.string "cron"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

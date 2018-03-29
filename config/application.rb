@@ -11,8 +11,12 @@ module PettyMoneyKing
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.action_controller.action_on_unpermitted_parameters = :raise
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.active_job.queue_adapter = :sidekiq
+    config.eager_load_paths += %W( #{config.root}/app/jobs )
+    config.eager_load_paths += %W( #{config.root}/app/workers )
+    config.time_zone = 'Taipei'
+    config.i18n.default_locale = :'zh-CN'
   end
 end

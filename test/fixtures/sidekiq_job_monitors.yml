@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_define_id: 1
+  jid: MyString
+  job_args: MyString
+  user_id: 1
+  expected_at: 2018-03-29 09:37:29
+  executing_at: 2018-03-29 09:37:29
+  complete_at: 2018-03-29 09:37:29
+  status: MyString
+  cron: MyString
+
+two:
+  job_define_id: 1
+  jid: MyString
+  job_args: MyString
+  user_id: 1
+  expected_at: 2018-03-29 09:37:29
+  executing_at: 2018-03-29 09:37:29
+  complete_at: 2018-03-29 09:37:29
+  status: MyString
+  cron: MyString

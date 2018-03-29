@@ -8,6 +8,7 @@ end
 ruby '2.4.0'
 
 gem 'coffee-rails', '~> 4.2'
+gem 'devise'
 gem 'gentelella-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -18,8 +19,11 @@ gem 'normalize-rails', '~> 3.0.0'
 gem 'puma', '~> 3.7'
 gem 'parse-cron'
 gem 'rails', '~> 5.1.5'
+gem 'redis-namespace', '1.5.3'
 gem 'sass-rails', '~> 5.0'
 gem "select2-rails"
+gem 'sidekiq', '~>5.0.0'
+gem 'sidekiq-scheduler'
 gem 'uglifier', '>= 1.3.0'
 
 
